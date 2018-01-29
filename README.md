@@ -58,3 +58,7 @@ Based on our exisiting study, we are exploing several directions to further expl
 * Optimizing hash joins algorithms taking advantage of opportunities identified in exisiting studies
 * Deploying hash tables on many-core architectures with die-stacked High Bandwidth Memory
 * Optimizing query processing on such hardware platforms
+
+## Contact
+
+Cheng Xuntao [email](xcheng002@ntu.edu.sg)

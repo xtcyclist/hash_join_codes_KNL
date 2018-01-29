@@ -2108,10 +2108,10 @@ int main(int argc, char **argv)
 	cpu_set_t cpuset;
  	pthread_attr_init(&attr);
 	
-	FILE *f_inner_keys=fopen("./data/inner_keys.data", "rb");
-	FILE *f_inner_vals=fopen("./data/inner_vals.data", "rb");
-	FILE *f_outer_keys=fopen("./data/outer_keys.data", "rb");
-	FILE *f_outer_vals=fopen("./data/outer_vals.data", "rb");
+	FILE *f_inner_keys=fopen("./inner_keys.data", "rb");
+	FILE *f_inner_vals=fopen("./inner_vals.data", "rb");
+	FILE *f_outer_keys=fopen("./outer_keys.data", "rb");
+	FILE *f_outer_vals=fopen("./outer_vals.data", "rb");
 	fread(inner_keys_1, inner_tuples, sizeof(int), f_inner_keys);
 	fread(inner_vals_1, inner_tuples, sizeof(int), f_inner_vals);
 	fread(outer_keys_1, outer_tuples, sizeof(int), f_outer_keys);

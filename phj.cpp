@@ -2075,10 +2075,10 @@ int main(int argc, char **argv)
 	FILE *f_outer_vals;//=fopen("../data/outer_vals.data", "rb");
 	
 	std::string name1,name2,name3,name4;
-	name1.append("/home/s/shuhao-z/join_alg/data/ik");
-	name2.append("/home/s/shuhao-z/join_alg/data/iv");
-	name3.append("/home/s/shuhao-z/join_alg/data/ok");
-	name4.append("/home/s/shuhao-z/join_alg/data/ov");
+	name1.append("./ik");
+	name2.append("./iv");
+	name3.append("./ok");
+	name4.append("./ov");
 	name1.append("_");
 	name2.append("_");
 	name3.append("_");

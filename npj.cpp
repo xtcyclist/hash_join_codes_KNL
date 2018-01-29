@@ -1009,19 +1009,15 @@ int main(int argc, char **argv)
 	pthread_attr_t attr;
 	cpu_set_t cpuset;
  	pthread_attr_init(&attr);
-	FILE *f_inner_keys=fopen("/home/s/shuhao-z/join_alg/data/ik_128000000_1.000000.txt", "rb");
-	FILE *f_inner_vals=fopen("/home/s/shuhao-z/join_alg/data/iv_128000000_1.000000.txt", "rb");
-	//FILE *f_outer_keys=fopen("/home/s/shuhao-z/join_alg/data/ok_128000000_1.000000.txt", "rb");
-	//FILE *f_outer_vals=fopen("/home/s/shuhao-z/join_alg/data/ov_128000000_1.000000.txt", "rb");
+	FILE *f_inner_keys=fopen("./ik_128000000_1.000000.txt", "rb");
+	FILE *f_inner_vals=fopen("./iv_128000000_1.000000.txt", "rb");
 #ifndef ZIPF
-        FILE *f_outer_keys=fopen("/home/s/shuhao-z/join_alg/data/ok_128000000_1.000000.txt", "rb");
-        FILE *f_outer_vals=fopen("/home/s/shuhao-z/join_alg/data/ov_128000000_1.000000.txt", "rb");
+        FILE *f_outer_keys=fopen("./ok_128000000_1.000000.txt", "rb");
+        FILE *f_outer_vals=fopen("./ov_128000000_1.000000.txt", "rb");
 #else
-        FILE *f_outer_keys=fopen("/home/s/shuhao-z/hma_join/skew_gen/ok_128000000_1.000000_2.000000.txt", "rb");
-        FILE *f_outer_vals=fopen("/home/s/shuhao-z/hma_join/skew_gen/ov_128000000_1.000000_2.000000.txt", "rb");
+        FILE *f_outer_keys=fopen("./ok_128000000_1.000000_2.000000.txt", "rb");
+        FILE *f_outer_vals=fopen("./ov_128000000_1.000000_2.000000.txt", "rb");
 #endif
-	//FILE *f_outer_keys=fopen("/home/s/shuhao-z/hma_join/skew_gen/ok_128000000_1.000000_0.000000.txt", "rb");
-	//FILE *f_outer_vals=fopen("/home/s/shuhao-z/hma_join/skew_gen/ov_128000000_1.000000_0.000000.txt", "rb");
 	fread(inner_keys, inner_tuples, sizeof(int), f_inner_keys);
 	fread(inner_vals, inner_tuples, sizeof(int), f_inner_vals);
 	fread(outer_keys, outer_tuples, sizeof(int), f_outer_keys);
@@ -1072,7 +1068,6 @@ int main(int argc, char **argv)
 	join_tuples = info[0].join_tuples;
 	//fprintf(stderr, "Join tuples (measured): %9ld\n", join_tuples);
 	//fprintf(stderr, "Join selectivity: %.3f\n", join_tuples * 1.0 / (inner_tuples + outer_tuples));
-	// assemble results
 	uint64_t min_tt = ~0, max_tt = 0, avg_tt = 0;
 	uint64_t min_rt = ~0, max_rt = 0, avg_rt = 0;
 	for (t = 0 ; t != threads ; ++t) {

@@ -5,6 +5,9 @@ lib=-L/home/s/shuhao-z/install/lib
 
 all: cpra phj npj tpj
 
+cpra: cpra2.cpp
+	icpc -m64 cpra2.cpp -lpthread -std=c++0x -lrt -o cpra $(debug) $(lib) $(include) $(macro)
+
 phj: phj.cpp
 	icpc $(debug) phj.cpp -lpthread -std=c++0x -lrt -o phj $(macro) $(include) $(lib)
 

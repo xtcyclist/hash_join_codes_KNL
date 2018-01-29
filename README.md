@@ -11,6 +11,7 @@ In these implementations, we experimentally revisit the state-of-the-art main-me
 ### Hardware
 
 * Intel Xeon Phi Many-core processor of the Knights Landing Architecture 
+* x86-based Intel CPUs with AVX-512 support (not verified yet)
 
 ### Software
 
@@ -37,3 +38,9 @@ make write
 ./phj [#threads] [size of the outer relation] [size of the input relation]
 ./cpra [#threads] [size of the outer relation] [size of the input relation]
 ```
+
+## Publication
+
+* Xuntao Cheng, Bingsheng He, Xiaoli Du, and Chiew Tong Lau. 2017. [A Study of Main-Memory Hash Joins on Many-core Processor: A Case with Intel Knights Landing Architecture](https://dl.acm.org/citation.cfm?id=3132847.3132916). In Proceedings of the 2017 ACM on Conference on Information and Knowledge Management (CIKM '17). ACM, New York, NY, USA, 657-666. DOI: https://doi.org/10.1145/3132847.3132916
+
+

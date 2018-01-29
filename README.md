@@ -6,6 +6,10 @@ Advanced processor architectures have been driving new designs, implementations 
 
 In these implementations, we experimentally revisit the state-of-the-art main-memory hash join algorithms to study how the new hardware features of KNL affect the algorithmic design and tuning as well as to identify the opportunities for further performance improvement on KNL. In detail, we implement the state-of-the-art simple hash join (denoted as SHJ), partitioned hash join (with and without NUMA-aware optimizations, denoted as PHJ and CPRA, respectively).  Our experiments show that, although many existing optimizations are still valid on KNL with proper tuning, even the state-of-the-art algorithms have severely underutilized the memory bandwidth and other hardware resources. 
 
+Our implementations are based on codes from Polychroniou et al. which were designed for the previous generation of the Intel Xeon Phi. Their publication is listed in the following:
+
+Orestis Polychroniou, Arun Raghavan, and Kenneth A. Ross. 2015. [Rethinking SIMD Vectorization for In-Memory Databases](https://dl.acm.org/citation.cfm?id=2747645). In Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data (SIGMOD '15). ACM, New York, NY, USA, 1493-1508. DOI: https://doi.org/10.1145/2723372.2747645 
+
 ### Architecture of Intel Xeon Phi
 <img src="./figures/arch.png" width="40%">
 The Intel Xeon Phi of the Knights Landing architecture (KNL) is illustrated in the above figure. The KNL model we use consists of 32 tiles, 16 GB MCDRAM and other hardware components which are all connected to a 2D mesh. Each tile tightly couples two low-frequency out-of-order x86-based cores, and two 512-bit Vector Processing Units (VPUs). Each core has its L1 caches and shares a 1 MB L2 cache with the other peer in the same tile. Through the memory channels, KNL connects to at most 400 GB DDR main memory. For more details, please refer to our publication listed below.

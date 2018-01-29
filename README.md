@@ -38,3 +38,7 @@ make write
 ./phj [#threads] [size of the outer relation] [size of the input relation]
 ./cpra [#threads] [size of the outer relation] [size of the input relation]
 ```
+
+## Publication
+
+(A Study of Main-Memory Hash Joins on Many-core Processor: A Case with Intel Knights Landing Architecture)[https://dl.acm.org/citation.cfm?id=3132847.3132916]

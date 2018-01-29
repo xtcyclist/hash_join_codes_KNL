@@ -11,6 +11,7 @@ In these implementations, we experimentally revisit the state-of-the-art main-me
 ### Hardware
 
 * Intel Xeon Phi Many-core processor of the Knights Landing Architecture 
+* x86-based Intel CPUs with AVX-512 support (not verified yet)
 
 ### Software
 

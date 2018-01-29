@@ -51,4 +51,10 @@ make write
 
 * Xuntao Cheng, Bingsheng He, Xiaoli Du, and Chiew Tong Lau. 2017. [A Study of Main-Memory Hash Joins on Many-core Processor: A Case with Intel Knights Landing Architecture](https://dl.acm.org/citation.cfm?id=3132847.3132916). In Proceedings of the 2017 ACM on Conference on Information and Knowledge Management (CIKM '17). ACM, New York, NY, USA, 657-666. DOI: https://doi.org/10.1145/3132847.3132916
 
+## Ongoing work
 
+Based on our exisiting study, we are exploing several directions to further exploit the many-core architecture and die-stacked High Bandwidth Memory for main-memory databases. We list three major directions in the following. By far, we have explored the first two directions and submitted our research manuscripts to related conferences. 
+
+* Optimizing hash joins algorithms taking advantage of opportunities identified in exisiting studies
+* Deploying hash tables on many-core architectures with die-stacked High Bandwidth Memory
+* Optimizing query processing on such hardware platforms

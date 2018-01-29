@@ -39,6 +39,7 @@ make cpra
 make write
 ./write [#threads] [size of the outer relation] [size of the input relation] 
 ```
+Please update the paths for input relations in the source files of hash joins accordinly after this generation. 
 
 ## Run hash joins
 ```

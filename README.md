@@ -61,4 +61,4 @@ Based on our exisiting study, we are exploing several directions to further expl
 
 ## Contact
 
-[Email](xcheng002@ntu.edu.sg) Cheng Xuntao.
+[Email](mailto:xcheng002@ntu.edu.sg) Cheng Xuntao.

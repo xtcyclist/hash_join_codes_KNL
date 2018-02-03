@@ -1009,19 +1009,35 @@ int main(int argc, char **argv)
 	pthread_attr_t attr;
 	cpu_set_t cpuset;
  	pthread_attr_init(&attr);
-	FILE *f_inner_keys=fopen("./ik_128000000_1.000000.txt", "rb");
-	FILE *f_inner_vals=fopen("./iv_128000000_1.000000.txt", "rb");
-#ifndef ZIPF
-        FILE *f_outer_keys=fopen("./ok_128000000_1.000000.txt", "rb");
-        FILE *f_outer_vals=fopen("./ov_128000000_1.000000.txt", "rb");
-#else
-        FILE *f_outer_keys=fopen("./ok_128000000_1.000000_2.000000.txt", "rb");
-        FILE *f_outer_vals=fopen("./ov_128000000_1.000000_2.000000.txt", "rb");
-#endif
-	fread(inner_keys, inner_tuples, sizeof(int), f_inner_keys);
-	fread(inner_vals, inner_tuples, sizeof(int), f_inner_vals);
-	fread(outer_keys, outer_tuples, sizeof(int), f_outer_keys);
-	fread(outer_vals, outer_tuples, sizeof(int), f_outer_vals);
+
+        std::string name1,name2,name3,name4;
+        name1.append("./ik");
+        name2.append("./iv");
+        name3.append("./ok");
+        name4.append("./ov");
+        name1.append("_");
+        name2.append("_");
+        name3.append("_");
+        name4.append("_");
+        name1.append(std::to_string(inner_tuples));
+        name2.append(std::to_string(inner_tuples));
+        name3.append(std::to_string(outer_tuples));
+        name4.append(std::to_string(outer_tuples));
+        name1.append(".txt");
+        name2.append(".txt");
+        name3.append(".txt");
+        name4.append(".txt");
+
+        f_inner_keys=fopen(name1.c_str(), "rb");
+        f_inner_vals=fopen(name2.c_str(), "rb");
+        f_outer_keys=fopen(name3.c_str(), "rb");
+        f_outer_vals=fopen(name4.c_str(), "rb");
+
+        fread(inner_keys_1, inner_tuples, sizeof(int), f_inner_keys);
+        fread(inner_vals_1, inner_tuples, sizeof(int), f_inner_vals);
+        fread(outer_keys_1, outer_tuples, sizeof(int), f_outer_keys);
+        fread(outer_vals_1, outer_tuples, sizeof(int), f_outer_vals);
+
 	for (t = 0 ; t != threads ; ++t) {
 		int cpu_idx=get_cpu_id(t, threads);
 		CPU_ZERO((void*)&cpuset);

@@ -1834,7 +1834,7 @@ int main(int argc, char **argv)
 	name2.append(std::to_string(inner_tuples));	
 	name3.append(std::to_string(outer_tuples));	
 	name4.append(std::to_string(outer_tuples));	
-        name1.append("_");
+        /*name1.append("_");
         name2.append("_");
         name3.append("_");
         name4.append("_");
@@ -1850,6 +1850,7 @@ int main(int argc, char **argv)
 	name2.append(std::to_string(zipf));	
 	name3.append(std::to_string(zipf));	
 	name4.append(std::to_string(zipf));	
+	*/
 	name1.append(".txt");
 	name2.append(".txt");
 	name3.append(".txt");
